@@ -1,0 +1,11 @@
+select * from sLogin.user;
+INSERT INTO sLogin.user (userName,password,role)
+VALUES ("804222", "dGVzdDEyMw==", "USER");
+
+CREATE TABLE sLogin.user (
+    loginId int NOT NULL AUTO_INCREMENT,
+    userName varchar(255) NOT NULL,
+    password varchar(255),
+    role varchar(255),
+    PRIMARY KEY (loginId)
+);
