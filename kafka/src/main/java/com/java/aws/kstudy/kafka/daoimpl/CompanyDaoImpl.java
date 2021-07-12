@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -18,6 +19,7 @@ import com.java.aws.kstudy.kafka.domain.CompanyVO;
 public class CompanyDaoImpl implements ICompanyDao{
 	private Logger LOG = LoggerFactory.getLogger(CompanyDaoImpl.class);
 	@Autowired
+	@Qualifier("primaryMongoTemplate")
     MongoTemplate mongoTemplate;
 
 	@Override

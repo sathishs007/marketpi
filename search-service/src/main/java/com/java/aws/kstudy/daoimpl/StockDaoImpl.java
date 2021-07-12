@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
@@ -26,6 +27,7 @@ import com.java.aws.kstudy.domain.StockVO;
 public class StockDaoImpl implements IStockDao{
 	private Logger LOG = LoggerFactory.getLogger(StockDaoImpl.class);
 	@Autowired
+	 @Qualifier("secondaryMongoTemplate")
     MongoTemplate mongoTemplate;
 	@Override
 	public StockVO getLatestStock(String companyCode) throws Exception {

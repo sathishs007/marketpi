@@ -3,6 +3,7 @@ package com.java.aws.kstudy.kafka.daoimpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
@@ -13,6 +14,7 @@ import com.java.aws.kstudy.kafka.domain.StockVO;
 public class StockDaoImpl implements IStockDao{
 	private Logger LOG = LoggerFactory.getLogger(StockDaoImpl.class);
 	@Autowired
+	 @Qualifier("secondaryMongoTemplate")
     MongoTemplate mongoTemplate;
 	@Override
 	public void addStock(StockVO vo) throws Exception {

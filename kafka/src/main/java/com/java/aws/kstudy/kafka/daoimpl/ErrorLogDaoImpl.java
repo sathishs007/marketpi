@@ -3,6 +3,7 @@ package com.java.aws.kstudy.kafka.daoimpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,7 @@ import com.java.aws.kstudy.kafka.domain.ErrorLog;
 public class ErrorLogDaoImpl implements IErrorLogDao{
 	private Logger LOG = LoggerFactory.getLogger(ErrorLogDaoImpl.class);
 	@Autowired
+	@Qualifier("primaryMongoTemplate")
     MongoTemplate mongoTemplate;
 	@Override
 	public void addErrorLog(ErrorLog log) throws Exception {
