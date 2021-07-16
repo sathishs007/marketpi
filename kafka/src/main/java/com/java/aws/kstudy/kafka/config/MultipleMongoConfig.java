@@ -1,4 +1,4 @@
-package com.java.aws.kstudy.config;
+package com.java.aws.kstudy.kafka.config;
 
 import org.springframework.boot.autoconfigure.mongo.MongoProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
